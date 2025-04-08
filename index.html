@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cassie's MySpace</title>
+    <title>Cassie</title>
     <style type="text/css">
+        /* NEW: Full-page base styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
         body {
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QgJDh0wQYz6JQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAJUlEQVQ4y2NgGAWjYBBUVFT8Z2Bg+A8E//79Y/j79y/D79+/GX79+sXw8+dPhh8/fjB8//6d4du3bwxfv35l+PLlC8Pnz58ZPn36xPDx40eGDx8+MLx//57h3bt3DG/fvmV48+YNw+vXrxlevXrF8PLlS4YXL14wPH/+nOHZs2cMT58+ZXjy5AnD48ePGR48eMDw4MEDhvv37zPcu3eP4e7duwx37txhuH37NsOtW7cYbt68yXDjxg2G69evM1y7do3h6tWrDFeuXGG4fPkyw6VLlxguXrzIcOHCBYbz588znDt3juHs2bMMZ86cYTh9+jTDqVOnGE6ePMlw4sQJhuPHjzMcO3aM4ejRowxHjhxhOHz4MMOhQ4cYDh48yHDgwAGG/fv3M+zbt49h7969DHv27GHYvXs3w65duxh27tzJsGPHDobt27czbNu2jWHr1q0MW7ZsYdi8eTPDpk2bGDZu3MiwYcMGhvXr1zOsW7eOYe3atQxr1qxhWL16NcOqVasYVq5cybBixQqG5cuXMyxbtoyhsrKSAQBUQAN0QczR0QAAAABJRU5ErkJggg==');
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QgJDh0wQYz6JQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAJUlEQVQ4y2NgGAWjYBBUVFT8Z2Bg+A8E//79Y/j79y/D79+/GX79+sXw8+dPhh8/fjB8//6d4du3bwxfv35l+PLlC8Pnz58ZPn36xPDx40eGDx8+MLx//57h3bt3DG/fvmV48+YNw+vXrxlevXrF8PLlS4YXL14wPH/+nOHZs2cMT58+ZXjy5AnD48ePGR49esTw8OFDhgcPHjDcv3+f4d69ewx3795luHPnDsPt27cZbt26xXDz5k2GGzduMFy/fp3h2rVrDFevXmW4cuUKw+XLlxkuXbrEcPHiRYYLFy4wnD9/nuHcuXMMZ8+eZThz5gzD6dOnGU6dOsVw8uRJhhMnTjAcP36c4dixYwxHjx5lOHLkCMPhw4cZDh06xHDw4EGGAwcOMOzfv59h3759DHv37mXYs2cPw+7duxl27drFsHPnToYdO3YwbN++nWHbtm0MW7duZdi8eTPDpk2bGDZu3MiwYcMGhvXr1zOsW7eOYe3atQxr1qxhWL16NcOqVasYVq5cybBixQqG5cuXMyxbtoyhsrKSAQBUQAN0QczR0QAAAABJRU5ErkJggg==');
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow: hidden;
+            text-align: center;
+            padding: 20px;
         }
 
-        .profile-container {
-            width: 66.67vh; /* 6:9 aspect ratio based on height */
-            height: 100vh;
+        /* UPDATED Profile Container */
+        .profile {
+            width: 95%;
+            max-width: 1000px;
             margin: 0 auto;
             background-color: #111;
             border: 3px solid #ff0000;
-            position: relative;
-            overflow: hidden;
+            text-align: left;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
+        /* REST OF YOUR ORIGINAL STYLES */
         .profile-header {
             background-color: #000;
             color: #ff0000;
-            padding: 2vh;
-            font-size: 3vh;
+            padding: 10px;
+            font-size: 24px;
             font-weight: bold;
             text-align: center;
             border-bottom: 2px dashed #ff0000;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .profile-content {
-            height: calc(100% - 7.5vh);
-            overflow-y: auto;
-            padding: 2vh;
         }
 
         .profile-pic {
-            display: block;
-            width: 25vh;
-            height: 25vh;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
             border: 3px solid #ff0000;
-            margin: 0 auto 2vh;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
         }
 
+        .profile-content {
+            padding: 10px;
+        }
+
         .section {
+            margin-bottom: 20px;
             background-color: #222;
+            padding: 10px;
             border: 1px solid #ff0000;
-            margin-bottom: 2vh;
-            padding: 2vh;
         }
 
         .section h2 {
             color: #ff0000;
-            margin: 0 0 1vh 0;
-            padding-bottom: 1vh;
+            margin-top: 0;
             border-bottom: 1px dotted #ff0000;
-            font-size: 2.5vh;
+            padding-bottom: 5px;
         }
 
         .blink {
@@ -74,55 +79,40 @@
         .marquee {
             color: #ff0000;
             font-weight: bold;
-            margin: 1.5vh 0;
-            font-size: 2vh;
+            margin: 10px 0;
         }
 
         .contact-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 2vh;
         }
 
         .contact-table td {
-            padding: 1vh;
+            padding: 5px;
             border: 1px solid #ff0000;
-        }
-
-        .friends-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5vh;
         }
 
         .friend-box {
+            float: left;
+            width: 100px;
             text-align: center;
+            margin: 5px;
         }
 
         .friend-box img {
-            width: 12vh;
-            height: 12vh;
             border: 1px solid #ff0000;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
         }
 
-        .friend-box div {
-            font-size: 1.8vh;
-            margin-top: 0.5vh;
-        }
-
-        .comment {
-            margin-bottom: 1vh;
-            font-size: 2vh;
-        }
-
-        .comment strong {
-            color: #ff0000;
+        .clear {
+            clear: both;
         }
 
         /* Scrollbar styling */
         ::-webkit-scrollbar {
-            width: 0.8vh;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
@@ -136,18 +126,40 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #cc0000;
         }
+
+        /* NEW: Responsive adjustments */
+        @media (max-width: 768px) {
+            .profile-pic {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+            }
+            
+            .friend-box {
+                width: 45%;
+                margin: 5px 2%;
+            }
+            
+            .friend-box img {
+                width: 100%;
+                height: auto;
+                max-width: 80px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="profile-container">
+    <div class="profile">
         <div class="profile-header">
             <marquee behavior="scroll" direction="left">AAAAAHHH IM GOING EAT YOUR BURGERS</marquee>
         </div>
         
         <div class="profile-content">
-            <img src="https://cdn.discordapp.com/avatars/703177201063034980/7fdbbdadad6f743a7d7b6bb1f433e811.png?size=1024" 
-                 alt="Profile Picture" 
-                 class="profile-pic">
+            <img 
+                src="https://cdn.discordapp.com/avatars/703177201063034980/7fdbbdadad6f743a7d7b6bb1f433e811.png?size=1024" 
+                alt="Your Profile Pic" 
+                class="profile-pic" 
+            />
             
             <div class="section">
                 <h2>About Me</h2>
@@ -181,34 +193,33 @@
             
             <div class="section">
                 <h2>Friends</h2>
-                <div class="friends-grid">
-                    <div class="friend-box">
-                        <img src="https://cdn.discordapp.com/avatars/482063302961397760/31d35674612a691c548bb1a662881664.png?size=1024" alt="Xenon">
-                        <div>Xenon</div>
-                    </div>
-                    <div class="friend-box">
-                        <img src="https://cdn.discordapp.com/avatars/1026862668444860498/9bf322f5d4f8150b94c92bc680a9ad1a.png?size=1024" alt="Scarlet">
-                        <div>Scarlet</div>
-                    </div>
-                    <div class="friend-box">
-                        <img src="https://cdn.discordapp.com/avatars/1038965448135430185/3353abd13a7646af6538ce1e008354c3.png?size=1024" alt="Kyra">
-                        <div>Kyra</div>
-                    </div>
-                    <div class="friend-box">
-                        <img src="https://cdn.discordapp.com/avatars/235574367591858177/2199ed7db38c311173926291bdbb8a83.png?size=1024" alt="Zead">
-                        <div>Zead</div>
-                    </div>
+                <div class="friend-box">
+                    <img src="https://cdn.discordapp.com/avatars/482063302961397760/31d35674612a691c548bb1a662881664.png?size=1024" alt="Friend 1" />
+                    <div>Xenon</div>
                 </div>
+                <div class="friend-box">
+                    <img src="https://cdn.discordapp.com/avatars/1026862668444860498/9bf322f5d4f8150b94c92bc680a9ad1a.png?size=1024" alt="Friend 2" />
+                    <div>Scarlet</div>
+                </div>
+                 <div class="friend-box">
+                    <img src="https://cdn.discordapp.com/avatars/1038965448135430185/3353abd13a7646af6538ce1e008354c3.png?size=1024" alt="Friend 3" />
+                    <div>Kyra</div>
+                </div>
+                <div class="friend-box">
+                    <img src="https://cdn.discordapp.com/avatars/235574367591858177/2199ed7db38c311173926291bdbb8a83.png?size=1024" alt="Friend 4" />
+                    <div>Zead</div>
+                </div>
+                <div class="clear"></div>
             </div>
             
             <div class="section">
                 <h2>Comments</h2>
                 <div class="marquee">What are you thinking about?</div>
-                <div class="comment"><strong>Xenon:</strong> boop.</div>
-                <div class="comment"><strong>Scarlet:</strong> *snuggles*</div>
-                <div class="comment"><strong>Evilburger:</strong> Rawr</div>
-                <div class="comment"><strong>Kyra:</strong> gay</div>
-                <div class="comment"><strong>Zead:</strong> wurpi</div>
+                <p><strong>Xenon:</strong> boop.</p>
+                <p><strong>Scarlet:</strong> *snuggles* </p>
+                <p><strong>Evilburger:</strong> Rawr</p>
+                <p><strong>Kyra:</strong> gay </p>
+                <p><strong>Zead:</strong> wurpi </p>
             </div>
         </div>
     </div>
